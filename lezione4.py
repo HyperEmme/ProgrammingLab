@@ -10,12 +10,11 @@ class CSVFile():
     for line in my_file:
       elements = line.split(',')
       if elements[0] != 'Date':
-        date  = elements[0]
-        value = elements[1]
+        #date  = elements[0]
+        #value = elements[1]
         #valori_prezzo.append(float(value))
         #valori_data.append(date)
-        valori.append(float(value))
-        valori.append(date)
+        valori.append(elements)
     for i in range(len(valori)):
       print('{}'.format(valori[i]).split(' , '))
     #for i in range(len(valori_prezzo)):
@@ -25,9 +24,10 @@ class CSVFile():
     
     my_file.close()
 
-valori_prezzo = []
-valori_data = []
+#valori_prezzo = []
+#valori_data = []
 valori = []
 
 fileCSV = CSVFile('a')
+print('Questo è il nome del file ----> {}'.format(fileCSV.name))
 fileCSV.get_data()
