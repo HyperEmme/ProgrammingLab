@@ -1,3 +1,4 @@
+import os
 
 class CSVFile():
 
@@ -16,18 +17,17 @@ class CSVFile():
         #valori_data.append(date)
         valori.append(elements)
     for i in range(len(valori)):
-      print('{}'.format(valori[i]).split(' , '))
-    #for i in range(len(valori_prezzo)):
-      #print('{}'.format(valori_prezzo[i]))
-    #for i in range(len(valori_data)):
-      #print('{}'.format(valori_data[i]))
+      #print('{}'.format(valori[i]).split(' , '))
+      print('{}'.format(valori[i]).strip())
+
     
     my_file.close()
 
-#valori_prezzo = []
-#valori_data = []
+
 valori = []
 
-fileCSV = CSVFile('a')
-print('Questo è il nome del file ----> {}'.format(fileCSV.name))
+nome = input('Inserisci il nome che si vuole dare al file: ')
+fileCSV = CSVFile(nome)
+os.system('cls' if os.name == 'nt' else 'clear')  #parte di codice per cancellare il contenuto della shell. Ricordati che sopra ho importato os tramite: import os. Funzione trovata su internet e funziona 
+print('_____ Questo è il nome del file ----> {} _____'.format(fileCSV.name))
 fileCSV.get_data()
