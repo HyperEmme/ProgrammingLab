@@ -12,8 +12,8 @@ def sottrazioneLista(my_list):
     
 def prodottoLista(my_list):
     prodotto = 1
-    for i in range(len(my_list)):
-        prodotto = prodotto * my_list[i]
+    for i in my_list:
+        prodotto = prodotto * i
     return prodotto
 
 my_list = [14, 35, 66, 89]
